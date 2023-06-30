@@ -1,0 +1,27 @@
+.container {
+  background-color: var(--global--color-primary-white);
+
+  display: flex;
+  justify-content: center;
+  transition: all 0.3s ease;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  height: 60vh;
+}
+@media only screen and (max-height: 900px) {
+  .container {
+    height: 80vh;
+  }
+}
+@media only screen and (max-height: 700px) {
+  .container {
+    height: 90vh;
+  }
+}
+.btnContainer {
+  display: flex !important;
+  justify-content: center;
+  transition: all 0.3s ease;
+  margin-top: 30px;
+}

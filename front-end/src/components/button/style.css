@@ -1,0 +1,32 @@
+.btn {
+  background-color: var(--global--color-primary-lavander);
+  color: var(--global--color-primary-white);
+  border: none;
+  border-radius: 5px;
+  height: "50px";
+  padding: 5px;
+  margin: 5px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.btn:hover {
+  transform: rotate(360deg);
+  transform: scale(1.01);
+  color: var(--global--color-primary-white);
+  background-color: var(--global--color-secondry);
+}
+.btn:disabled,
+.btn[disabled] {
+  transition: none;
+  color: var(--global--color-primary-white);
+  background-color: var(--global--color-primary-ofWhite);
+  cursor: not-allowed;
+}
+.btn:hover:disabled,
+.btn:hover[disabled] {
+  transition: none;
+  transform: none;
+  transform: none;
+  color: var(--global--color-primary-white);
+  background-color: var(--global--color-primary-ofWhite);
+}

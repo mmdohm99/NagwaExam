@@ -1,0 +1,26 @@
+.pickReasualtContainer {
+  color: var(--global--color-primary);
+  display: flex !important;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 15px;
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+  height: 5vh;
+  margin-top: -10px;
+}
+.show {
+  display: block;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+.hidden {
+  align-items: center;
+  display: flex !important;
+  display: none;
+  justify-content: center;
+  transition: all 0.3s ease;
+}

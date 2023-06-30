@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #c5bfd4;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+:root {
+  --global--color-primary: #492070;
+  --global--color-secondry: #674ea7;
+  --global--color-primary-lavander: #8e7cc3;
+  --global--color-primary-ofWhite: #b4a7d6;
+  --global--color-primary-white: #eeeeee;
+}

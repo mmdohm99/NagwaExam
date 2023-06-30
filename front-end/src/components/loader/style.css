@@ -1,0 +1,10 @@
+.loaderContainer {
+  background-color: var(--global--color-primary-white);
+
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.3s ease;
+  height: 100%;
+}

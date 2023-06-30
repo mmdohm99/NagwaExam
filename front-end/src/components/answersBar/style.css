@@ -1,0 +1,16 @@
+.ansbarContainer {
+  background-color: var(--global--color-primary);
+  color: var(--global--color-primary-white);
+  display: flex !important;
+  justify-content: flex-start;
+  padding: 10px 0px 5px 0px;
+  border-radius: 15px;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  height: 5vh;
+}
+
+.ansbarItem {
+  transition: all 0.3s ease;
+  width: 10%;
+}

@@ -1,0 +1,8 @@
+.holder {
+  width: 30px;
+}
+@media only screen and (max-width: 600px) {
+  .holder {
+    width: 20px;
+  }
+}
