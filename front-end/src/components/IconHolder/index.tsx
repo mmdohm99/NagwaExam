@@ -4,6 +4,7 @@ interface Props {
   src: string;
 }
 const IconHolder: React.FC<Props> = ({ src }) => {
+  // icon holder
   return (
     <div>
       <img className="holder" src={src} alt={"icon"} />

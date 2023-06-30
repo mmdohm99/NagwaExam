@@ -15,6 +15,7 @@ const Button: React.FC<Props> = ({
   width,
   height,fontSize
 }) => {
+  // a fully reusable btn which takes the function for handle click and other props .
   return (
     <>
       <button

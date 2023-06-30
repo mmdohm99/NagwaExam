@@ -6,15 +6,18 @@ import useFetch from "../../utlis/useFetch";
 import Header from "../../components/header";
 import Container from "@mui/material/Container";
 import "./style.css";
-const Resualt = () => {
+interface Props {}
+const Resualt: React.FC<Props> = () => {
   const navigate = useNavigate();
   const { setSubmited, setAnswers, setQuestionNumber, answers } =
     useContext(ExamContextModule);
-
+  // this function counts the true answers
   const trueAnswers = useMemo(
-    () => answers?.filter((a: any) => a === true),
+    () => answers?.filter((a: boolean | string) => a === true),
     [answers]
   );
+
+  // this functions counts the score to send it to be and return the rank
   const score = useMemo(() => trueAnswers?.length * 10, [trueAnswers?.length]);
 
   const { response, loading } = useFetch({
@@ -22,7 +25,8 @@ const Resualt = () => {
     url: `/exam`,
     data: { score },
   });
-
+  // this function is used to redirect after finishin the exam to home page and remove
+  // the exam from local storage or reatake the same exam or retake a new exam
   const handleRedirect = useCallback(
     (url: string, same: boolean) => {
       if (!same) {

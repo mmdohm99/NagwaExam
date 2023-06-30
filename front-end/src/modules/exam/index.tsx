@@ -13,8 +13,8 @@ import PickResualt from "../../components/pickResualt";
 import Loader from "../../components/loader";
 import Header from "../../components/header";
 const arr = ["Noun", "Verb", "Adjective", "Adverb"];
-
-const Exam = () => {
+interface Props {}
+const Exam: React.FC<Props> = () => {
   const [value, setValue] = useState("");
   const {
     examQuestions,
@@ -31,14 +31,17 @@ const Exam = () => {
     method: "get",
     url: `/exam`,
   });
+  // this function turns the route protector on
   useEffect(() => {
-    questionNumber === 0 && setStarted(false);
+    questionNumber === 0 && setStarted(true);
   }, [setStarted, questionNumber]);
 
   localStorageExam(response as AxiosResponse, loading);
+  // this function turn the portected route off after finishin the exam to reach the reasult page
+  // it sends the word and the checked answer to back end to check if it is correct answer or not then push it to answers arr
   const handleSubmit = useCallback(async () => {
     if (questionNumber === 9) {
-      setStarted(true);
+      setStarted(false);
     }
 
     setSubmited(true);
@@ -82,8 +85,6 @@ const Exam = () => {
               submited={submited}
               btns={arr as [string]}
               setValue={setValue}
-              handleSubmit={handleSubmit}
-              selectedAns={selectedAns}
               value={value}
             />
             <Container className="btnContainer">

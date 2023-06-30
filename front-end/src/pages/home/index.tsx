@@ -1,5 +1,6 @@
 import Home from "../../modules/home";
-const HomePage = () => {
+interface Props {}
+const HomePage: React.FC<Props> = () => {
   return (
     <>
       <Home />

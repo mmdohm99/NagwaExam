@@ -1,5 +1,6 @@
 import Resualt from "../../modules/resualt";
-const ResualtPage = () => {
+interface Props {}
+const ResualtPage: React.FC<Props> = () => {
   return (
     <>
       <Resualt />

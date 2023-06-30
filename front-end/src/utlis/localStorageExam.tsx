@@ -5,6 +5,8 @@ interface ele {
   word: string;
   pos: string;
 }
+// This custom hook is used to set exam questions in the local storage it checks if there is data in local storage 
+// then it gets it if not it fetches new data
 const useLocalStorage = (response: AxiosResponse, loading: boolean) => {
   const { setExamQuestions } = useContext(ExamContextModule);
 

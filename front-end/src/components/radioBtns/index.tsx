@@ -5,20 +5,26 @@ import Grid from "@mui/material/Grid";
 import { useCallback } from "react";
 import "./style.css";
 import { Container } from "@mui/material";
-
-export default function RadioButtonsGroup({
+interface Props {
+  btns: string[];
+  submited: boolean;
+  value: string;
+  setValue: (ans: string) => void;
+}
+const RadioButtonsGroup: React.FC<Props> = ({
   btns,
   submited,
   setValue,
   value,
-}: any) {
+}) => {
+  // this function binds the radio btns value to state
   const handleChange = useCallback(
     (e: any) => {
       setValue(e.target.value);
     },
     [setValue]
   );
-console.log(value)
+
   return (
     <Container>
       <RadioGroup value={value} onChange={handleChange}>
@@ -51,4 +57,5 @@ console.log(value)
       </RadioGroup>
     </Container>
   );
-}
+};
+export default RadioButtonsGroup;

@@ -3,7 +3,12 @@ import IocnHolder from "../IconHolder";
 import trueLogo from "../../assets/true.png";
 import wronge from "../../assets/false.png";
 import "./style.css";
-const PickResualt = ({ submited, selectedAns }: any) => {
+interface Props {
+  submited: boolean;
+  selectedAns: boolean | string;
+}
+const PickResualt: React.FC<Props> = ({ submited, selectedAns }) => {
+  // this component show true or wronge depends on selectedAns value which is true or false
   return (
     <Container className={"pickReasualtContainer"}>
       {submited && (

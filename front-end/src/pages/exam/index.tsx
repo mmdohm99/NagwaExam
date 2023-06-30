@@ -1,5 +1,6 @@
 import Exam from "../../modules/exam";
-const ExamPage = () => {
+interface Props {}
+const ExamPage: React.FC<Props> = () => {
   return (
     <>
       <Exam />

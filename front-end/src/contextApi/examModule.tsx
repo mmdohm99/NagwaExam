@@ -13,24 +13,29 @@ const contextDefaultValues: ExamContextState = {
   setSelectedAns: () => "",
   questionNumber: 0,
   setQuestionNumber: () => 0,
-  started: false,
-  setStarted: () => false,
+  started: true,
+  setStarted: () => true,
 };
 export const ExamContextModule =
   createContext<ExamContextState>(contextDefaultValues);
-export default function ExamModule({ children }: any) {
+interface Props {
+  children: React.ReactNode;
+}
+const ExamModule: React.FC<Props> = ({ children }) => {
   const navigate = useNavigate();
 
-  const [examQuestions, setExamQuestions] = useState<any[]>([]);
+  const [examQuestions, setExamQuestions] = useState<string[]>([]);
   const [questionNumber, setQuestionNumber] = useState(0);
   const [submited, setSubmited] = React.useState(false);
   const [answers, setAnswers] = React.useState([]);
   const [selectedAns, setSelectedAns] = React.useState("");
-  const [started, setStarted] = React.useState(false);
-
+  const [started, setStarted] = React.useState(true);
+  //  this is the functios used to roll to next word also navigate to resualt page after finishing
+  // next / handleSubmit functions is tigger submited to true and false to disable and enable the submit / bext btns
   const next = useCallback(() => {
     if (questionNumber === 9) {
       navigate(`/resualt`);
+      setSelectedAns("");
     } else {
       setQuestionNumber((prev) => (prev < 10 ? prev + 1 : prev));
 
@@ -60,4 +65,5 @@ export default function ExamModule({ children }: any) {
       {children}
     </ExamContextModule.Provider>
   );
-}
+};
+export default ExamModule;

@@ -2,9 +2,10 @@ import { useContext } from "react";
 import { ExamContextModule } from "../../contextApi/examModule";
 import Container from "@mui/material/Container";
 import "./style.css";
-const ProgressBar = () => {
+interface Props {}
+const ProgressBar: React.FC<Props> = () => {
   const { questionNumber } = useContext(ExamContextModule);
-
+  // progress bar uses the question number to handle the change in width dynamically
   return (
     <Container
       className="barContainer"

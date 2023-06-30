@@ -5,9 +5,10 @@ import trueLogo from "../../assets/true.png";
 import wronge from "../../assets/false.png";
 import Container from "@mui/material/Container";
 import "./style.css";
-const AnswersBar = () => {
+interface Props {}
+const AnswersBar: React.FC<Props> = () => {
   const { answers } = useContext(ExamContextModule);
-
+  // this bar show the answerd question result to show the student his status
   return (
     <Container
       className="ansbarContainer"
@@ -15,7 +16,7 @@ const AnswersBar = () => {
         marginLeft: 0,
       }}
     >
-      {answers?.map((ans,i) => (
+      {answers?.map((ans, i) => (
         <div key={i} className={"ansbarItem"}>
           {ans === (true as any) ? (
             <IocnHolder src={trueLogo} />

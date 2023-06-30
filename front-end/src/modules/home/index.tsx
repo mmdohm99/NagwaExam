@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import Button from "../../components/button";
 import { Container } from "@mui/material";
 import "./style.css";
-const Home = () => {
+interface Props {}
+const Home: React.FC<Props> = () => {
   const navigate = useNavigate();
 
   const handleClick = useCallback(() => {

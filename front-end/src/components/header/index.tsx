@@ -5,7 +5,7 @@ interface Props {
   center?: any;
   loading?: boolean;
   subTitle: string;
-  fetchedData: any;
+  fetchedData: string;
 }
 const Header: React.FC<Props> = ({
   subTitle,
@@ -14,6 +14,7 @@ const Header: React.FC<Props> = ({
   loading,
   fetchedData,
 }) => {
+  // header handling the undefined data while fetching with loader
   return (
     <div className={center && "headerContainer"}>
       {loading || fetchedData === undefined ? (
